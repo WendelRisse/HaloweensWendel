@@ -1,0 +1,164 @@
+/* ---------- ESTILO GERAL ---------- */
+body {
+  background: radial-gradient(ellipse at top, #0a1a2f 0%, #010914 100%);
+  color: #e0e6f0;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ---------- BARRA DE NAVEGAÇÃO ---------- */
+.navbar {
+  background: rgba(5, 10, 20, 0.8);
+  backdrop-filter: blur(6px);
+  transition: background 0.4s ease;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #e0e6f0 !important;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  color: #c2c8d3 !important;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #79a9f8 !important;
+}
+
+/* ---------- CABEÇALHO ---------- */
+
+
+#fotoPerfil {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(120, 160, 255, 0.4);
+  box-shadow: 0 0 40px rgba(80, 120, 200, 0.25);
+  transition: transform 0.6s ease;
+}
+
+#fotoPerfil:hover {
+  transform: scale(1.05);
+}
+
+h1, h2 {
+  font-family: 'Cinzel', serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+h1 {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(100, 160, 255, 0.3);
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  color: #a7b6d0;
+  border-bottom: 1px solid rgba(120, 150, 255, 0.2);
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+/* ---------- SEÇÕES ---------- */
+section {
+  max-width: 850px;
+  margin: auto;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #d4d9e3;
+  margin-bottom: 1rem;
+}
+
+strong {
+  color: #b0c4ff;
+}
+
+em {
+  color: #92a6ff;
+}
+
+/* ---------- POEMA / BLOCO DESTACADO ---------- */
+.poema {
+  font-style: italic;
+  background: rgba(15, 25, 45, 0.4);
+  border-left: 3px solid rgba(100, 130, 255, 0.3);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  line-height: 1.8;
+  color: #c8d4ff;
+  transition: background 0.6s ease;
+}
+
+.poema:hover {
+  background: rgba(30, 40, 70, 0.6);
+}
+
+/* ---------- RODAPÉ ---------- */
+footer {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(5, 10, 20, 0.6));
+  border-top: 1px solid rgba(100, 130, 255, 0.2);
+}
+
+footer p {
+  color: #d3daea;
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: #d3daea;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #6ea7ff;
+}
+
+/* ---------- EFEITO DE APARIÇÃO SUAVE ---------- */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+section, #headerindex, footer {
+  animation: aparecer 1.4s ease forwards;
+}
+
+/* ---------- ROLAGEM PERSONALIZADA ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(80, 120, 200, 0.4);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(110, 160, 255, 0.6);
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 768px) {
+  #fotoPerfil {
+    width: 150px;
+    height: 150px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  section {
+    padding: 0 1.5rem;
+  }
+}
