@@ -1,6 +1,6 @@
 // Acervo: injeta o painel com todas as fantasias e liga os botões [data-acervo].
 const FANTASIAS = [
-  { href: 'efermidade.html', nome: 'Efemeridade', ano: 2026, tema: 'o que desaparece' },
+  { href: 'efemeridade.html', nome: 'Efemeridade', ano: 2026, tema: 'o que desaparece' },
   { href: 'vazio.html',      nome: 'O Vazio',     ano: 2025, tema: 'o que vem depois' },
   { href: 'index.html',   nome: 'O Fracasso',  ano: 2024, tema: 'o que desmorona' },
 ];
