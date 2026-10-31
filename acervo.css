@@ -1,0 +1,13 @@
+/* Acervo de fantasias: painel lateral compartilhado pelas três páginas */
+.acervo{width:min(380px,90vw)}
+.acervo ul{list-style:none;padding:0;margin:0}
+.acervo a{display:block;padding:1.2rem 0;text-decoration:none;color:inherit;border-bottom:1px solid var(--ac-linha);transition:opacity .4s}
+.acervo a:hover{opacity:.6}
+.acervo .ac-nome{display:block;font-size:1.7rem;line-height:1.2}
+.acervo .ac-meta{display:block;font-size:.9rem;opacity:.65;margin-top:.2rem}
+.acervo a[aria-current]{pointer-events:none;opacity:.45}
+.acervo .ac-titulo{font-size:1.1rem;opacity:.7}
+body[data-tema=claro] .acervo{--bs-offcanvas-bg:#f3f1eb;--bs-offcanvas-color:#222;--ac-linha:rgba(0,0,0,.12);font-family:"Cormorant Garamond",serif}
+body[data-tema=vazio] .acervo{--bs-offcanvas-bg:#050c18;--bs-offcanvas-color:#e0e6f0;--ac-linha:rgba(120,160,255,.2);font-family:"Cinzel",serif}
+body[data-tema=fracasso] .acervo{--bs-offcanvas-bg:#15110f;--bs-offcanvas-color:#ddd5c5;--ac-linha:rgba(221,213,197,.15);font-family:"Bodoni Moda",serif}
+button.btn-vazio{background:transparent;font-family:inherit;cursor:pointer}

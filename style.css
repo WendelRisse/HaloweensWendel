@@ -162,3 +162,38 @@ section, #headerindex, footer {
     padding: 0 1.5rem;
   }
 }
+
+/* ---------- O VAZIO: PROFUNDIDADE ---------- */
+:root { --prof: 0; --hero: 0; }
+
+/* quanto mais você desce, mais escuro fica o mar */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: #000; opacity: calc(var(--prof) * .85);
+}
+
+/* o herói afunda e some ao rolar */
+#headerindex { animation: none; opacity: calc(1 - var(--hero) * .85); }
+#fotoPerfil { filter: blur(calc(var(--hero) * 5px)) saturate(calc(1 - var(--hero) * .6)); }
+
+/* versos afundando, um por um */
+.poema .afunda {
+  display: block; opacity: 0; transform: translateY(-14px); filter: blur(4px);
+  transition: opacity 2.2s ease, transform 2.8s ease, filter 2.2s ease;
+}
+.poema .afunda.visivel { opacity: 1; transform: none; filter: none; }
+
+/* a frase final chega devagar, sem poder ser evitada */
+.inevitavel { opacity: .12; transition: opacity 4s ease, text-shadow 4s ease; }
+.inevitavel.visivel { opacity: 1; text-shadow: 0 0 22px rgba(110, 167, 255, .55); }
+
+.btn-vazio {
+  text-decoration: none; color: #c2c8d3; border: 1px solid rgba(120, 160, 255, .3);
+  padding: 12px 35px; letter-spacing: 3px; font-size: .8rem; transition: .5s;
+}
+.btn-vazio:hover { background: rgba(120, 160, 255, .15); color: #fff; }
+
+a:focus-visible { outline: 2px solid #79a9f8; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .poema .afunda, .inevitavel { transition: none; opacity: 1; transform: none; filter: none; }
+}

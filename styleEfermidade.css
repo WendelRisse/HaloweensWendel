@@ -1,0 +1,58 @@
+/* EFEMERIDADE — estética: memória apagada */
+:root{--papel:#f3f1eb;--tinta:#1c1b19;--cinza:#6b675e;--sombra:#aaa49a;--apagado:0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--papel);color:var(--tinta);font-family:"Inter",sans-serif}
+a:focus-visible,button:focus-visible{outline:2px solid var(--tinta);outline-offset:4px}
+
+.navbar{background:rgba(243,241,235,.65);backdrop-filter:blur(10px)}
+.navbar-brand{font-family:"Cormorant Garamond",serif;letter-spacing:5px;color:var(--tinta)!important;font-size:1.6rem}
+.nav-link{color:var(--cinza)!important;letter-spacing:2px}
+.nav-link:hover{color:#000!important}
+
+/* HERO: a foto vai se apagando conforme você rola (--apagado de 0 a 1) */
+#headerindex{position:relative;overflow:hidden}
+#headerindex::before{content:"";position:absolute;width:700px;height:700px;max-width:120vw;
+  background:radial-gradient(circle,rgba(255,255,255,.9),transparent 70%);z-index:-1}
+#fotoPerfil{width:min(360px,78vw);height:min(360px,78vw);border-radius:50%;object-fit:cover;
+  filter:grayscale(100%) contrast(80%) blur(calc(var(--apagado)*7px));
+  opacity:calc(.9 - var(--apagado)*.75);
+  -webkit-mask-image:linear-gradient(#000 calc(100% - var(--apagado)*85%),transparent);
+          mask-image:linear-gradient(#000 calc(100% - var(--apagado)*85%),transparent);
+  box-shadow:0 30px 80px rgba(0,0,0,.15);transition:filter 1s}
+#fotoPerfil:hover{filter:grayscale(40%);transform:scale(1.02)}
+h1{font-family:"Cormorant Garamond",serif;font-size:clamp(2.6rem,9vw,7rem);letter-spacing:clamp(6px,2vw,20px);
+  font-weight:300;color:#111;opacity:calc(1 - var(--apagado)*.6)}
+.lead{letter-spacing:5px;color:#777;font-size:1rem}
+.btn-vazio{text-decoration:none;color:#444;border:1px solid rgba(0,0,0,.2);padding:12px 35px;
+  letter-spacing:3px;font-size:.8rem;transition:.5s}
+.btn-vazio:hover{background:var(--tinta);color:#fff}
+
+/* TEXTO */
+section{min-height:60vh}
+section h2{font-family:"Cormorant Garamond",serif;font-size:3.5rem;letter-spacing:8px;font-weight:400;color:#111}
+section p{max-width:680px;margin:35px auto;line-height:2;font-size:1.1rem;color:#555}
+
+/* A MEMÓRIA SE APAGANDO: cada item some em sequência quando entra na tela */
+.apaga{transition:opacity 3s ease,filter 3s ease;display:inline-block}
+.apaga.some{opacity:.07;filter:blur(3px)}
+.apaga.some:hover{opacity:.4;filter:blur(1px);transition-duration:.6s}
+.perdas{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 2.5rem;max-width:680px;margin:40px auto;
+  font-family:"Cormorant Garamond",serif;font-size:2rem;color:#333;font-style:italic}
+
+.poema{font-family:"Cormorant Garamond",serif;font-size:clamp(1.4rem,4vw,2rem);line-height:1.9;color:#333;
+  border-left:2px solid var(--sombra);padding-left:35px;max-width:680px;margin-left:auto;margin-right:auto;text-align:left}
+.poema .apaga{display:block}
+.poema .fica{margin-top:1.5rem;color:#111;font-style:italic}
+
+footer{border-top:1px solid rgba(0,0,0,.1);color:var(--cinza)}
+footer em{font-family:"Cormorant Garamond",serif;font-size:1.4rem}
+.rodape-link{color:var(--tinta);transition:opacity .4s}
+.rodape-link:hover{color:#000;opacity:.5}
+
+.img-fluid{max-width:none}
+@media(max-width:768px){
+  section h2{font-size:2.5rem;letter-spacing:5px}
+  .perdas{font-size:1.6rem}
+}
+@media(prefers-reduced-motion:reduce){.apaga{transition:none}html{scroll-behavior:auto}}

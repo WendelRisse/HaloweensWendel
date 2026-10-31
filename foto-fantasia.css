@@ -1,0 +1,22 @@
+/* Lugar para a foto do Wendel com a fantasia (todas as páginas) */
+#foto{max-width:680px;margin:0 auto;padding:4rem 1.5rem 6rem;min-height:0}
+.foto-fantasia{margin:0}
+.foto-fantasia img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:filter 1.2s ease}
+.foto-fantasia figcaption{margin-top:1rem;font-size:.95rem;opacity:.65;text-align:left}
+/* sem imagem ainda: mostra uma moldura vazia */
+.foto-fantasia.sem-foto img{display:none}
+.foto-fantasia.sem-foto::before{content:"sua foto com a fantasia aqui";display:grid;place-items:center;aspect-ratio:4/5;
+  border:1px dashed currentColor;opacity:.4;font-style:italic}
+
+body[data-tema=claro] .foto-fantasia{color:#555}
+body[data-tema=claro] .foto-fantasia img{filter:grayscale(1) contrast(.85);opacity:.9;box-shadow:0 30px 80px rgba(0,0,0,.15)}
+body[data-tema=claro] .foto-fantasia img:hover{filter:grayscale(.3)}
+body[data-tema=claro] .foto-fantasia figcaption{font-family:"Cormorant Garamond",serif;font-size:1.15rem}
+
+body[data-tema=vazio] .foto-fantasia{color:#c2c8d3}
+body[data-tema=vazio] .foto-fantasia img{border:1px solid rgba(120,160,255,.3);box-shadow:0 0 40px rgba(80,120,200,.25)}
+
+body[data-tema=fracasso] .foto-fantasia{color:#a39a8a}
+body[data-tema=fracasso] .foto-fantasia img{filter:grayscale(.7) sepia(.25);border:1px solid rgba(221,213,197,.2)}
+body[data-tema=fracasso] .foto-fantasia img:hover{filter:grayscale(.2) sepia(.1)}
+body[data-tema=fracasso] .foto-fantasia figcaption{font-style:italic}
