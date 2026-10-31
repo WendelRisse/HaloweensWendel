@@ -2,7 +2,7 @@
 const FANTASIAS = [
   { href: 'efermidade.html', nome: 'Efemeridade', ano: 2026, tema: 'o que desaparece' },
   { href: 'vazio.html',      nome: 'O Vazio',     ano: 2025, tema: 'o que vem depois' },
-  { href: 'fracasso.html',   nome: 'O Fracasso',  ano: 2024, tema: 'o que desmorona' },
+  { href: 'index.html',   nome: 'O Fracasso',  ano: 2024, tema: 'o que desmorona' },
 ];
 const atual = location.pathname.split('/').pop();
 const claro = document.body.dataset.tema === 'claro';
